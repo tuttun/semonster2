@@ -4,11 +4,13 @@
 package semonster2;
 
 public class App {
-    public String getGreeting() {
-        return "こんにちは SEMonster";
-    }
+  public String getGreeting() {
+    return "こんにちは SEMonster";
+  }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
-    }
+  public static void main(String[] args) {
+    System.out.println(new App().getGreeting());
+    Monster monster = new Monster();
+    System.out.println(monster.toString());
+  }
 }
