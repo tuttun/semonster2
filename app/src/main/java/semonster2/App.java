@@ -3,11 +3,7 @@
  */
 package semonster2;
 
-import java.util.Random;
-
 public class App {
-  final static Random random = new Random();
-  final static int maxRandomNumber = 4;// ランダムな数値の最大値(0～4)
 
   public String getGreeting() {
     return "こんにちは SEMonster";
@@ -15,7 +11,7 @@ public class App {
 
   public static void main(String[] args) {
     System.out.println(new App().getGreeting());
-    Monster monster = new Monster(random.nextInt(5), random.nextInt(maxRandomNumber + 1));
-    System.out.println(monster.toString());
+    Player player = new Player("user");
+    System.out.println(player.toString());
   }
 }
