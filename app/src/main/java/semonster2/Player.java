@@ -13,8 +13,11 @@ public class Player {
   String Name;
   LinkedList<Integer> randomList = new LinkedList<>();// ランダムな数値を格納していく
 
+  int HP;
+
   Player(String PlayerName, LinkedList<Integer> random) {
     this.Name = PlayerName;
+    this.HP = 5;
     this.randomList = random;
     // 24行目でモンスターをドロー
     this.drawMonsters();
@@ -36,7 +39,7 @@ public class Player {
     for (Monster m : this.deck) {
       MonsterName = MonsterName + m + "\n";
     }
-    PlayerStatus = "Deck:" + this.Name + "\n" + MonsterName;
+    PlayerStatus = "Deck:" + this.Name + " HP:" + this.HP + "\n" + MonsterName;
     return PlayerStatus;
   }
 
