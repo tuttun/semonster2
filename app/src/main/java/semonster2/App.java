@@ -4,18 +4,30 @@
 package semonster2;
 
 import java.util.Random;
+import java.util.LinkedList;
 
 public class App {
   final static Random random = new Random();
-  final static int maxRandomNumber = 4;// ランダムな数値の最大値(0～4)
+  final static int maxRandomNumber = 4;
 
   public String getGreeting() {
     return "こんにちは SEMonster";
   }
 
+  // ここでRandom関数を呼びLinkedListに入れる
+  public static LinkedList<Integer> RandomCreate() {
+    LinkedList<Integer> randomList = new LinkedList<>();// ランダムな数値を格納していく
+    for (int i = 0; i < 8; i++) {
+      // 偶数番目の要素に名前，奇数番目の要素にレア度を入れる
+      randomList.add(random.nextInt(5));
+      randomList.add(random.nextInt(maxRandomNumber + 1));
+    }
+    return randomList;
+  }
+
   public static void main(String[] args) {
     System.out.println(new App().getGreeting());
-    Monster monster = new Monster(random.nextInt(5), random.nextInt(maxRandomNumber + 1));
-    System.out.println(monster.toString());
+    Player player = new Player("user", RandomCreate());
+    System.out.println(player.toString());
   }
 }
