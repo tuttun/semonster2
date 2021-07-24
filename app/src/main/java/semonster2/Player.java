@@ -27,20 +27,16 @@ public class Player {
     }
   }
 
-  // Playerがもつモンスターを返す
-  public String showDeck() {
-    String MonsterName = "";
-    for (Monster m : this.deck) {
-      MonsterName = MonsterName + m + "\n";
-    }
-    return MonsterName;
-  }
-
   // Playerの名前とモンスターを表示
   @Override
   public String toString() {
     String PlayerStatus = "";
-    PlayerStatus = "Deck:" + this.Name + "\n" + this.showDeck();
+    String MonsterName = "";
+    // PlayerがもつモンスターをMonsterNameに格納
+    for (Monster m : this.deck) {
+      MonsterName = MonsterName + m + "\n";
+    }
+    PlayerStatus = "Deck:" + this.Name + "\n" + MonsterName;
     return PlayerStatus;
   }
 
