@@ -25,9 +25,11 @@ public class App {
     return randomList;
   }
 
+
   public static void main(String[] args) {
     System.out.println(new App().getGreeting());
-    Player player = new Player("user", RandomCreate());
-    System.out.println(player.toString());
+    SeMonsterGame mf = new SeMonsterGame(RandomCreate());
+    mf.addPlayer("user");
+    mf.draw("user");
   }
 }
