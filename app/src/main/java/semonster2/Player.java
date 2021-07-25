@@ -19,8 +19,6 @@ public class Player {
     this.Name = PlayerName;
     this.HP = 5;
     this.randomList = random;
-    // 24行目でモンスターをドロー
-    this.drawMonsters();
   }
 
   // モンスターをドロー
@@ -42,5 +40,4 @@ public class Player {
     PlayerStatus = "Deck:" + this.Name + " HP:" + this.HP + "\n" + MonsterName;
     return PlayerStatus;
   }
-
 }
